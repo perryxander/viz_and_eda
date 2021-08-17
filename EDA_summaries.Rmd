@@ -26,6 +26,7 @@ scale_fill_discrete = scale_fill_viridis_d
 
 ```
 
+
 ##Load the weather data
 
 ```{r}
@@ -204,6 +205,22 @@ weather_df %>%
 
 ```
 
+## 'group_by' and 'mutate'
+
+```{r}
+
+weather_df %>%
+  group_by(name) %>%
+  mutate(
+    mean_tmax = mean(tmax,na.rm = TRUE),
+    centered_tmax = tmax - mean_tmax #location specific mean tmax
+  ) %>%
+  ggplot(aes(x = date, y = centered_tmax, color = name)) +
+  geom_point()
+
+#provides different mean for each group
+
+```
 
 
 

@@ -155,7 +155,7 @@ weather_df %>%
 
 ## Setting Options
 
-```{r, eval =FALSE}
+```{r, include =FALSE}
 
 #Universal options that update entire document
 
